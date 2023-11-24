@@ -1,0 +1,115 @@
+body {
+  font-family: Arial;
+  height: 100vh;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+#editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 300px;
+  border-radius: 4px;
+}
+#editor:focus {
+  outline: none;
+  border: 1px solid #939393;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 8px;
+}
+.options__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.options__group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.options__group:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 0.5px;
+  height: 50%;
+  background-color: #caced1;
+}
+.options__button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-content: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.options__button.active {
+  background-color: #a2bcff;
+}
+.options__button:hover {
+  background-color: #cedcff;
+}
+.options__button:hover.active {
+  background-color: #cedcff;
+}
+
+.options__select {
+  max-width: 128px;
+  cursor: pointer;
+  height: 32px;
+  padding: 0 32px 0 8px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  /* needed */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* SVG background image */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 0.6em;
+  background-position: calc(100% - 12px) center;
+  background-repeat: no-repeat;
+}
+.options__select::-ms-expand {
+  display: none;
+}
+.options__input[type="color"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border: none;
+}
+.options__input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.options__input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px 0px grey;
+}
